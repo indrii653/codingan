@@ -8,37 +8,134 @@
     </section>
     
     <section class="content">
-    
         <div class="row">
             <!-- left column -->
             <div class="col-md-8">
               <!-- general form elements -->
-                
                 <div class="box box-primary">
                     <div class="box-header">
                         <h3 class="box-title">Masukan Data</h3>
                     </div><!-- /.box-header -->
                     <!-- form start -->
-                    <?php $this->load->helper("form"); ?>
-                    <form role="form" id="addwilayah" action="<?php echo base_url() ?>wilayah/addNewwilayah" method="post" role="form">
-                        <div class="box-body">
+                <?php $this->load->helper("form"); ?>
+                <?php echo form_open_multipart('wilayah/addNewwilayah');?>
+                    <div class="box-body">
+                        <div class="row">
                             <div class="row">
-                                <div class="col-md-6">                                
+                                <div class="col-md-3">                               
                                     <div class="form-group">
-                                        <label for="taskTitle">Zona Wilayah dan Penduduk</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('taskTitle'); ?>" id="taskTitle" name="taskTitle" maxlength="256" />
-                                    </div>  
+                                        <label rowspan="2" for="Regol">Regol</label>
+                                        <textarea class="form-control required" value="<?php echo set_value('L'); ?> id="L" name="L">Laki-laki</textarea>
+                                        <br>
+                                        <textarea class="form-control required" id="P" name="P"><?php echo $P; ?>Perempuan</textarea>
+                                    </div>   
                                 </div>
                             </div>
-                        </div><!-- /.box-body -->
+                            <div class="row">
+                                <div class="col-md-3">                               
+                                    <div class="form-group">
+                                        <label for="Pakuwon">Pakuwon</label>
+                                        <textarea class="form-control required" id="pL" name="pL"><?php echo $pL; ?></textarea>
+                                        <br>
+                                        <textarea class="form-control required" id="pP" name="pP"><?php echo $pP; ?></textarea>
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="Paminggir">Paminggir</label>
+                                        <textarea class="form-control required" id="pmL" name="pmL"><?php echo $pmL; ?></textarea>
+                                        <br>
+                                        <textarea class="form-control required" id="pmP" name="pmP"><?php echo $pmP; ?></textarea>
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="Muarasanding">Muara Sanding</label>
+                                        <textarea class="form-control required" id="msL" name="msL"><?php echo $msL; ?></textarea>
+                                        <br>
+                                        <textarea class="form-control required" id="msP" name="msP"><?php echo $msP; ?></textarea>
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="Rumah">Rumah</label>
+                                        <textarea class="form-control required" id="rumah" name="rumah"><?php echo $rumah; ?></textarea>     
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="JumlahKK">Jumlah KK</label>
+                                        <textarea class="form-control required" id="jumlahkk" name="jumlahkk"><?php echo $jumlah_kk; ?></textarea>   
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="jumlahtotal">Jumlah Total</label>
+                                        <textarea class="form-control required" id="jumlahtotal" name="jumlahtotal"><?php echo $jumlah_total; ?></textarea>    
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="all1">Jumlah Total Laki-Laki</label>
+                                        <textarea class="form-control required" id="all1" name="all1"><?php echo $all1; ?></textarea>    
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="all2">Jumlah Total Perempuan</label>
+                                        <textarea class="form-control required" id="all2" name="all2"><?php echo $all2; ?></textarea>    
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="all3">Jumlah Total</label>
+                                        <textarea class="form-control required" id="all3" name="all3"><?php echo $all3; ?></textarea>    
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="all4">Jumlah Total KK</label>
+                                        <textarea class="form-control required" id="all4" name="all4"><?php echo $all4; ?></textarea>    
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">                                
+                                    <div class="form-group">
+                                        <label for="all5">Jumlah Total KK</label>
+                                        <textarea class="form-control required" id="all5" name="all5"><?php echo $all5; ?></textarea>    
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.box-body -->
     
                         <div class="box-footer">
                             <input type="submit" class="btn btn-primary" value="Submit" />
                             <input type="reset" class="btn btn-default" value="Reset" />
                         </div>
-                    </form>
-                </div>
+                </form>
             </div>
+        </div>
+
             <div class="col-md-4">
                 <?php
                     $this->load->helper('form');

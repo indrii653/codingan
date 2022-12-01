@@ -11,9 +11,7 @@
                 <div class="col-sm-6">
                     <div class="single-home-blog">
                         <div class="card">
-                            <img src="img/blog/akreditasi.jpg" class="card-img-top" alt="penghargaan">
-                            <div class="card-body">
-                            </div>
+                            <img src="img/blog/akreditasi.jpg" class="card-img-top" alt="penghargaan" >
                         </div>
                     </div>
                 </div>
@@ -45,7 +43,12 @@ foreach($penghargaan as $p){
                                 </a>
                                 <ul>
                                     <li> <span class="ti-user"></span><?=$p->p1;?></li>
-                                    
+                                    <a href="penghargaan/detail/<?=$p->id?>">
+                                  Baca Selanjutnya
+                                </a>                                
+                                <ul class="blog-info-link">
+                                    <li><a href="#"><i class="far fa-comments"></i></a></li>
+                                </ul>
                                 </ul>
                             </div>
                         </div>

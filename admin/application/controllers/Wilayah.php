@@ -133,7 +133,7 @@ class Wilayah extends BaseController
                 $wilayahInfo = array('pL'=>$pL, 'pP'=>$pP,'pmL'=>$pmL,'pmP'=>$pmP,'msL'=>$msL,'msP'=>$msP,
                 'L'=>$L,'P'=>$P,'rumah'=>$rumah,'jumlah_kk'=>$jumlah_kk,'jumlah_total'=>$jumlah_total,'all1'=>$all1,'all2'=>$all2,
                 'all3'=>$all3,'all4'=>$all4,'all5'=>$all5,'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
-                $result = $this->w->editwilayah($wilayahInfo, $taskId);
+                $result = $this->w->addNewwilayah($wilayahInfo);
                 
                 if($result > 0) {
                     $this->session->set_flashdata('success', 'New data created successfully');
@@ -164,7 +164,7 @@ class Wilayah extends BaseController
                 redirect('wilayah/wilayahListing');
             }
             
-            $data['WilayahInfo'] = $this->w->getWilayahInfo($wilayahId);
+            $data['wilayahInfo'] = $this->w->getwilayahInfo($wilayahId);
 
             $this->global['pageTitle'] = 'CodeInsect : Edit Data';
             

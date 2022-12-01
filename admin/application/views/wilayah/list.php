@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>task/add"><i class="fa fa-plus"></i> Masukan Data</a>
+                    <a class="btn btn-primary" href="<?php echo base_url(); ?>wilayah/add"><i class="fa fa-plus"></i> Masukan Data</a>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                 <div class="box-header">
                     <h3 class="box-title">Zona Wilayah dan Penduduk</h3>
                     <div class="box-tools">
-                        <form action="<?php echo base_url() ?>task/taskListing" method="POST" id="searchList">
+                        <form action="<?php echo base_url() ?>wilayah/wilayahListing" method="POST" id="searchList">
                             <div class="input-group">
                               <input type="text" name="searchText" value="<?php echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                               <div class="input-group-btn">

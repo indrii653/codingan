@@ -88,6 +88,9 @@ class Banner extends BaseController
         }
         else
         {
+
+                $gbr_lama = $this->security->xss_clean($this->input->post('gbr_lama'));
+                unlink($config['upload_path'].$gbr_lama);
                 $h5 = $this->security->xss_clean($this->input->post('h5'));
                 $h1 = $this->security->xss_clean($this->input->post('h1'));
                 $p = $this->security->xss_clean($this->input->post('p'));
@@ -147,7 +150,7 @@ class Banner extends BaseController
             $this->load->library('form_validation');
             
                 $taskId = $this->input->post('taskId');
-                $config['upload_path']          = './../public_html/img';
+                $config['upload_path']          = '../img/';
                 $config['allowed_types']        = 'gif|jpg|jpeg|png';
                 $config['file_name']            = md5(date('Y-m-d H:i:s:u'));
                 $config['overwrite']            = true;
@@ -167,6 +170,8 @@ class Banner extends BaseController
                     $namafile = $uploaded_data['file_name'];
                 }
 
+                $gbr_lama = $this->security->xss_clean($this->input->post('gbr_lama'));
+                unlink($config['upload_path'].$gbr_lama);
                 $h5 = $this->security->xss_clean($this->input->post('h5'));
                 $h1 = $this->security->xss_clean($this->input->post('h1'));
                 $p = $this->security->xss_clean($this->input->post('p'));

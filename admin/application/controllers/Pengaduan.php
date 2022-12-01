@@ -87,11 +87,9 @@ class Pengaduan extends BaseController
             $this->loadThis();
         }
         else
-        {       
-            $this->load->library('form_validation');
+        {
             
-            $taskId = $this->input->post('taskId');
-            $config['upload_path']          = './../public_html/img/blog/';
+            $config['upload_path']          = '../img/blog/';
             $config['allowed_types']        = 'gif|jpg|jpeg|png';
             $config['file_name']            = md5(date('Y-m-d H:i:s:u'));
             $config['overwrite']            = true;
@@ -104,27 +102,23 @@ class Pengaduan extends BaseController
 
             if (!$this->upload->do_upload('img')) {
                 // $ambilnama=$this->p->getpengaduanInfo($taskId);                 
-                // $namafile = $ambilnamp->img;
+                // $namafile = $ambilnama->img;
                 echo $this->upload->display_errors();
             } else {
                 $uploaded_data = $this->upload->data();
                 $namafile = $uploaded_data['file_name'];
             }
-            
-            $pengaduanInfo = array('banner1'=>$namafile,'banner2'=>$namafile,'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
-            $result = $this->p->addNewpengaduan($pengaduanInfo);
-            
-            if($result == true)
-            {
-                $this->session->set_flashdata('success', 'Pengaduan updated successfully');
-                // $this->session->set_flashdata('success', $this->upload->display_errors().$config['upload_path']);
-            }
-            else
-            {
-                $this->session->set_flashdata('error', 'Pengaduan updation failed');
-            }
-            
-            redirect('pengaduan/pengaduanListing');
+                
+                $pengaduanInfo = array('banner1'=>$namafile,'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
+                $result = $this->p->addNewpengaduan($pengaduanInfo);
+
+                if($result > 0) {
+                    $this->session->set_flashdata('success', 'New pengaduan updated successfully');
+                } else {
+                    $this->session->set_flashdata('error', 'Pengaduan updation failed');
+                }
+                
+                redirect('pengaduan/pengaduanListing');
             }
     }
 
@@ -169,7 +163,7 @@ class Pengaduan extends BaseController
             $this->load->library('form_validation');
             
                 $taskId = $this->input->post('taskId');
-                $config['upload_path']          = './../public_html/img/blog/';
+                $config['upload_path']          = '../img/blog/';
                 $config['allowed_types']        = 'gif|jpg|jpeg|png';
                 $config['file_name']            = md5(date('Y-m-d H:i:s:u'));
                 $config['overwrite']            = true;
@@ -189,7 +183,9 @@ class Pengaduan extends BaseController
                     $namafile = $uploaded_data['file_name'];
                 }
                 
-                $pengaduanInfo = array('banner1'=>$namafile,'banner2'=>$namafile,'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
+                $gbr_lama = $this->security->xss_clean($this->input->post('gbr_lama'));
+                unlink($config['upload_path'].$gbr_lama);
+                $pengaduanInfo = array('banner1'=>$namafile,'createdBy'=>$this->vendorId, 'createdDtm'=>date('Y-m-d H:i:s'));
                 $result = $this->p->editpengaduan($pengaduanInfo, $taskId);
                 
                 if($result == true)

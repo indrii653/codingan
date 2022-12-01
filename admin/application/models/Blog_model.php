@@ -96,10 +96,11 @@ class Blog_model extends CI_Model
         
         return TRUE;
     }
-    function deleteblog($bl, $id)
+
+    function deletezona($id)
     {
         $this->db->where('id', $id);
-        $this->db->update('blog', $bl);
+        $this->db->delete('zona');
         
         return $this->db->affected_rows();
     }

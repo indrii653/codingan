@@ -4,6 +4,14 @@ class M_zona extends CI_Model{
 	function tampil_data(){
 		return $this->db->get('zona');
 	}
+
+	public function jumlah_data()
+    {
+        $this->db->select('id');
+        $this->db->from('blog');
+        return $this->db->get()->num_rows();
+    }
+	
 	function data_detail($id){
 		return $this->db->get_where('zona', array('id'=>$id));
 	}

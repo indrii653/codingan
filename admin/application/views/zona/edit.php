@@ -10,7 +10,7 @@ $deskripsi = $zonaInfo->deskripsi;
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i> Berita
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i> Zona Integritas
         <small>Add / Edit </small>
       </h1>
     </section>
@@ -19,7 +19,7 @@ $deskripsi = $zonaInfo->deskripsi;
     
         <div class="row">
             <!-- left column -->
-            <div class="col-md-8">
+            <div class="col-md-12">
               <!-- general form elements -->
                 
                 <div class="box box-primary">
@@ -28,21 +28,22 @@ $deskripsi = $zonaInfo->deskripsi;
                     </div><!-- /.box-header -->
                    <!-- form start -->
                    <?php $this->load->helper("form"); ?>
-                   <?php echo form_open_multipart('berita/editberita');?>
+                   <?php echo form_open_multipart('zona/editzona');?>
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-12"> 
                                     <div class="form-group">
                                         <label for="latar">Gambar</label>
-                                        <img src="<?php echo base_url(); ?>../../../public_html/img/blog/<?=$latar?>" width="100px">
-                                        <input type="file" class="form-control" id="latar" name="latar">
+                                        <img src="<?php echo base_url(); ?>../img/blog/<?=$latar?>" width="100px">
+                                        <input type="file" class="form-control" id="latar" name="img">
+                                        <input type="hidden" value="<?=$latar?>" name="gbr_lama" maxlength="256" />
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">                                
                                     <div class="form-group">
-                                        <label for="tgl">Tanggal Berita</label>
+                                        <label for="tgl">Keterangan Waktu</label>
                                         <input type="text" class="form-control required" value="<?php echo $tgl; ?>" id="tgl" name="tgl" maxlength="256" />
                                         <input type="hidden" value="<?php echo $taskId; ?>" name="taskId" maxlength="256" />
                                     </div>

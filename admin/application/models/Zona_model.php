@@ -97,10 +97,10 @@ class Zona_model extends CI_Model
         return TRUE;
     }
 
-    function deletezona($z, $id)
+    function deletezona($id)
     {
         $this->db->where('id', $id);
-        $this->db->update('zona', $z);
+        $this->db->delete('zona');
         
         return $this->db->affected_rows();
     }

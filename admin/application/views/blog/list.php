@@ -49,7 +49,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">List</h3>
+                    <h3 class="box-title"></h3>
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>blog/blogListing" method="POST" id="searchList">
                             <div class="input-group">
@@ -65,8 +65,9 @@
                   <table class="table table-hover">
                     <tr>
                         <th>Gambar</th>
+                        <th>Keterangan Waktu</th>
                         <th>Judul</th>
-                        <th>Deksripsi</th>
+                        <th>Deskripsi</th>
                         <th class="text-center">Actions</th>
                     </tr>
                     <?php
@@ -76,11 +77,13 @@
                         {
                     ?>
                     <tr>
-                        <td><img src="<?php echo base_url(); ?>../../public_html/img/<?=$record->foto?>" width="100px"></td>
+                        <td><img src="<?php echo base_url(); ?>../img/blog/<?=$record->foto?>" width="100px"></td>
+                        <td><?php echo $record->tgl ?></td>
                         <td><?php echo $record->judul ?></td>
                         <td><?php echo $record->p1 ?></td>
                         <td class="text-center">
                             <a class="btn btn-sm btn-info" href="<?php echo base_url().'blog/edit/'.$record->id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-sm btn-danger deleteblog" href="<?php echo base_url().'blog/delete/'.$record->id; ?>" data-id="<?php echo $record->id; ?>" title="Delete"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     <?php

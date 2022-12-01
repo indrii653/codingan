@@ -31,8 +31,9 @@ $puas = $kepuasanInfo->puas;
                                 <div class="col-md-12"> 
                                     <div class="form-group">
                                         <label for="description">Indeks Kepuasan Masyarakat(IKM)</label>
-                                        <img src="<?php echo base_url(); ?>../../../public_html/img/blog/<?=$puas?>" width="100px">
+                                        <img src="<?php echo base_url(); ?>../img/blog/<?=$puas?>" width="100px">
                                         <input type="file" class="form-control" id="gambar" name="img">
+                                        <input type="hidden" value="<?=$puas?>" name="gbr_lama" maxlength="256" />
                                         <input type="hidden" value="<?php echo $taskId; ?>" name="taskId" maxlength="256" />
                                     </div>
                                 </div>

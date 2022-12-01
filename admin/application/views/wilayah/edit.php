@@ -50,6 +50,7 @@ $all5 = $wilayahInfo->all5;
                                         <textarea class="form-control required" id="L" name="L"><?php echo $L; ?>Laki-laki</textarea>
                                         <br>
                                         <textarea class="form-control required" id="P" name="P"><?php echo $P; ?>Perempuan</textarea>
+                                        <input type="hidden" value="<?php echo $taskId; ?>" name="taskId" maxlength="256" />
                                     </div>   
                                 </div>
                             </div>

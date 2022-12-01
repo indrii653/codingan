@@ -89,7 +89,7 @@ class Penghargaan extends BaseController
         else
         {
             
-            $config['upload_path']          = './../public_html/img/blog/';
+            $config['upload_path']          = '../img/blog/';
             $config['allowed_types']        = 'gif|jpg|jpeg|png';
             $config['file_name']            = md5(date('Y-m-d H:i:s:u'));
             $config['overwrite']            = true;
@@ -115,7 +115,7 @@ class Penghargaan extends BaseController
                 $result = $this->p->addNewpenghargaan($penghargaanInfo);
 
                 if($result > 0) {
-                    $this->session->set_flashdata('success', 'New penghargaan created successfully');
+                    $this->session->set_flashdata('success', 'Penghargaan created successfully');
                 } else {
                     $this->session->set_flashdata('error', 'Penghargaan creation failed');
                 }
@@ -165,7 +165,7 @@ class Penghargaan extends BaseController
             $this->load->library('form_validation');
             
                 $taskId = $this->input->post('taskId');
-                $config['upload_path']          = './../public_html/img/blog/';
+                $config['upload_path']          = '../img/blog/';
                 $config['allowed_types']        = 'gif|jpg|jpeg|png';
                 $config['file_name']            = md5(date('Y-m-d H:i:s:u'));
                 $config['overwrite']            = true;
@@ -185,6 +185,8 @@ class Penghargaan extends BaseController
                     $namafile = $uploaded_data['file_name'];
                 }
                 
+                $gbr_lama = $this->security->xss_clean($this->input->post('gbr_lama'));
+                unlink($config['upload_path'].$gbr_lama);
                 $penghargaan = $this->security->xss_clean($this->input->post('penghargaan'));
                 $judul1 = $this->security->xss_clean($this->input->post('judul1'));
                 $p1 = $this->security->xss_clean($this->input->post('p1'));

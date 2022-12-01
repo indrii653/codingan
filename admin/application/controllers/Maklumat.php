@@ -172,7 +172,7 @@ class Maklumat extends BaseController
             $this->load->library('form_validation');
             
                 $taskId = $this->input->post('taskId');
-                $config['upload_path']          = './../public_html/img';
+                $config['upload_path']          = '../img/blog/';
                 $config['allowed_types']        = 'gif|jpg|jpeg|png';
                 $config['file_name']            = md5(date('Y-m-d H:i:s:u'));
                 $config['overwrite']            = true;
@@ -192,7 +192,8 @@ class Maklumat extends BaseController
                     $namafile = $uploaded_data['file_name'];
                 }
 
-                
+                $gbr_lama = $this->security->xss_clean($this->input->post('gbr_lama'));
+                unlink($config['upload_path'].$gbr_lama);
                 $maklumatInfo = array('maklumat'=>$namafile, 'updatedBy'=>$this->vendorId, 'updatedDtm'=>date('Y-m-d H:i:s'));
                 
                 $result = $this->m->editmaklumat($maklumatInfo, $taskId);

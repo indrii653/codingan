@@ -3,6 +3,7 @@ $taskId = $blogInfo->id;
 $foto = $blogInfo->foto;
 $judul = $blogInfo->judul;
 $p1 = $blogInfo->p1;
+$tgl = $blogInfo->tgl;
 ?>
 
 <div class="content-wrapper">
@@ -18,7 +19,7 @@ $p1 = $blogInfo->p1;
     
         <div class="row">
             <!-- left column -->
-            <div class="col-md-8">
+            <div class="col-md-12">
               <!-- general form elements -->
                 
                 <div class="box box-primary">
@@ -33,8 +34,16 @@ $p1 = $blogInfo->p1;
                                 <div class="col-md-12"> 
                                     <div class="form-group">
                                         <label for="foto">Gambar</label>
-                                        <img src="<?php echo base_url(); ?>../../../public_html/img/<?=$foto?>" width="100px">
+                                        <img src="<?php echo base_url(); ?>../img/blog/<?=$foto?>" width="100px">
                                         <input type="file" class="form-control" id="foto" name="img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">                                
+                                    <div class="form-group">
+                                        <label for="tgl">Tanggal</label>
+                                        <input type="text" class="form-control required" value="<?php echo $tgl; ?>" id="tgl" name="tgl" maxlength="256" />    
                                     </div>
                                 </div>
                             </div>

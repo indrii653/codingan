@@ -31,7 +31,8 @@ $struktur = $strukturInfo->struktur;
                                 <div class="col-md-12"> 
                                     <div class="form-group">
                                         <label for="gambar">Struktur</label>
-                                        <img src="<?php echo base_url(); ?>../../../public_html/img/<?=$struktur?>" width="100px">
+                                        <img src="<?php echo base_url(); ?>../img/<?=$struktur?>" width="100px">
+                                        <input type="hidden" value="<?=$struktur?>" name="gbr_lama" maxlength="256" />
                                         <input type="hidden" value="<?php echo $taskId; ?>" name="taskId" maxlength="256" />
                                         <input type="file" class="form-control" id="gambar" name="img">
                                     </div>

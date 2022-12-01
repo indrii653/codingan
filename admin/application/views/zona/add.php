@@ -11,7 +11,7 @@
     
         <div class="row">
             <!-- left column -->
-            <div class="col-md-8">
+            <div class="col-md-12">
               <!-- general form elements -->
                 
                 <div class="box box-primary">
@@ -20,31 +20,31 @@
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     <?php $this->load->helper("form"); ?>
-                    <?php echo form_open_multipart('berita/add');?>
+                    <?php echo form_open_multipart('zona/addNewzona');?>
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="latar">Gambar</label>
-                                        <input type="file" class="form-control" id="latar" name="latar">
+                                        <input type="file" class="form-control" id="latar" name="img">
                                     </div>
                                 </div>
-                                <div class="col-md-3">                                
+                                <div class="col-md-12">                                
                                     <div class="form-group">
                                         <label for="tgl">Tanggal</label>
-                                        <input type="text" class="form-control required" value="<?php echo set_value('tgl'); ?>" id="tgl" name="tgl" maxlength="256" />
+                                        <input type="text" class="form-control required" value=" <?php echo set_value('tgl'); ?>" id="tgl" name="tgl" maxlength="256" />
                                     </div>
                                 </div>
-                                <div class="col-md-3">                                
+                                <div class="col-md-12">                                
                                     <div class="form-group">
                                         <label for="judul">Judul</label>
-                                        <textarea class="form-control required" id="judul" name="judul"><?php echo $judul; ?></textarea>
+                                        <textarea class="form-control required" value=" <?php echo set_value('judul'); ?>" id="judul" name="judul"></textarea>
                                    </div>   
                                 </div>
-                                <div class="col-md-3">                                
+                                <div class="col-md-12">                                
                                     <div class="form-group">
                                         <label for="deskripsi">Deskripsi</label>
-                                        <textarea class="form-control required" id="deskripsi" name="deskripsi"><?php echo $deskripsi; ?></textarea>
+                                        <textarea class="form-control required" value=" <?php echo set_value('deskripsi'); ?> id="deskripsi" name="deskripsi"></textarea>
                                     </div>   
                                 </div>
                             </div>

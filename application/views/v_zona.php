@@ -15,11 +15,9 @@
                                     <p><?=bulan($tgl);?></p>
                                 </a>
                             </div>
-
                             <div class="blog_details">
                                 <a class="d-inline-block" href="zona/detail/<?=$z->id?>">
-                                  <h2><?=$z->judul;?>
-                                  </h2>
+                                    <h2><?=$z->judul;?></h2>
                                 </a>
                                 <p><?php echo strip_tags(substr(substr($z->deskripsi,0,200),0,strrpos(substr($z->deskripsi,0,200),' ')));?></p>
                                 <a href="zona/detail/<?=$z->id?>">
@@ -33,26 +31,6 @@
                     <?php
                     endforeach;
                     ?>
-                        <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="blog" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="blog2" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="blog2" class="page-link" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>

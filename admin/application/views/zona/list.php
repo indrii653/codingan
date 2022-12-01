@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>Zona/add"><i class="fa fa-plus"></i>Tambahkan Data</a>
+                    <a class="btn btn-primary" href="<?php echo base_url(); ?>zona/add"><i class="fa fa-plus"></i>Tambahkan Data</a>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Zona Integritas </h3>
+                    <h3 class="box-title">Zona Integritas</h3>
                     <div class="box-tools">
                         <form action="<?php echo base_url() ?>zona/zonaListing" method="POST" id="searchList">
                             <div class="input-group">
@@ -65,7 +65,7 @@
                   <table class="table table-hover">
                     <tr>
                         <th>Gambar</th>
-                        <th>Tanggal</th>
+                        <th>Keterangan Waktu</th>
                         <th>Judul</th>
                         <th>Deskripsi</th>
                         <th class="text-center">Actions</th>
@@ -77,12 +77,12 @@
                         {
                     ?>
                     <tr>
-                        <td><img src="<?php echo base_url(); ?>../../public_html/img/blog/<?=$record->latar?>" width="100px"></td>
+                        <td><img src="<?php echo base_url(); ?>../img/blog/<?=$record->latar?>" width="100px"></td>
                         <td><?php echo $record->tgl ?></td>
                         <td><?php echo $record->judul ?></td>
                         <td><?php echo $record->deskripsi ?></td>
                         <td class="text-center">
-                            <a class="btn btn-sm btn-info" href="<?php echo base_url().'Zona/edit/'.$record->id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-sm btn-info" href="<?php echo base_url().'zona/edit/'.$record->id; ?>" title="Edit"><i class="fa fa-pencil"></i></a>
                         </td>
                     </tr>
                     <?php
@@ -107,7 +107,7 @@
             e.preventDefault();            
             var link = jQuery(this).get(0).href;            
             var value = link.substring(link.lastIndexOf('/') + 1);
-            jQuery("#searchList").attr("action", baseURL + "Zona Integritas/Zona IntegritasListing/" + value);
+            jQuery("#searchList").attr("action", baseURL + "zona/zonaListing/" + value);
             jQuery("#searchList").submit();
         });
     });

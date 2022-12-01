@@ -20,19 +20,12 @@
                     </div><!-- /.box-header -->
                     <!-- form start -->
                     <?php $this->load->helper("form"); ?>
-                    <form role="form" id="addpengaduan" action="<?php echo base_url() ?>pengaduan/addNewpengaduan" method="post" role="form">
-                        <div class="box-body">
+                    <?php echo form_open_multipart('pengaduan/addNewpengaduan');?>                        <div class="box-body">
                         <div class="row">
                                 <div class="col-md-12"> 
                                     <div class="form-group">
-                                        <label for="banner1">Banner Pertama</label>
+                                        <label for="banner1">Pengaduan</label>
                                         <input type="file" class="form-control" id="banner1" name="img">    
-                                    </div>
-                                </div>
-                                <div class="col-md-12"> 
-                                    <div class="form-group">
-                                        <label for="banner2">Banner Kedua</label>
-                                        <input type="file" class="form-control" id="banner2" name="img">    
                                     </div>
                                 </div>
                             </div>

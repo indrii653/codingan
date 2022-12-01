@@ -1,7 +1,6 @@
 <?php
 $taskId = $pengaduanInfo->id;
 $banner1 = $pengaduanInfo->banner1;
-$banner2 = $pengaduanInfo->banner2;
 ?>
 
 <div class="content-wrapper">
@@ -31,19 +30,11 @@ $banner2 = $pengaduanInfo->banner2;
                         <div class="row">
                                 <div class="col-md-12"> 
                                     <div class="form-group">
-                                        <label for="b1">Banner Pertama</label>
-                                        <img src="<?php echo base_url(); ?>../../../public_html/img/<?=$banner1?>" width="100px">
+                                        <label for="b1">Pengaduan</label>
+                                        <img src="<?php echo base_url(); ?>../img/blog/<?=$banner1?>" width="100px">
                                         <input type="file" class="form-control" id="pengaduan" name="img">
+                                        <input type="hidden" value="<?=$banner1?>" name="gbr_lama" maxlength="256" />
                                         <input type="hidden" value="<?php echo $taskId; ?>" name="taskId" maxlength="256" />
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-md-12"> 
-                                    <div class="form-group">
-                                        <label for="b2">Banner Kedua</label>
-                                        <img src="<?php echo base_url(); ?>../../../public_html/img/<?=$banner2?>" width="100px">
-                                        <input type="file" class="form-control" id="pengaduan" name="img">
                                     </div>
                                 </div>
                         </div>
